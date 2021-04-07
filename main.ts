@@ -6,8 +6,10 @@ input.onButtonPressed(Button.A, function () {
         }
     }
     for (let index = 0; index < 10; index++) {
+        led.plot(2, 2)
         music.playTone(262, music.beat(BeatFraction.Whole))
         basic.pause(100)
+        led.unplot(2, 2)
         music.stopAllSounds()
         basic.pause(100)
     }

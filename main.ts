@@ -2,27 +2,19 @@ input.onButtonPressed(Button.A, function () {
     for (let y = 0; y <= 4; y++) {
         for (let x = 0; x <= 4; x++) {
             led.unplot(x, y)
-            basic.pause(1000)
+            basic.pause(500)
         }
     }
     alarma_sonora()
 })
 function alarma_sonora () {
     for (let index = 0; index < 10; index++) {
+        music.playTone(262, music.beat(BeatFraction.Eighth))
         led.plot(2, 2)
-        music.playTone(262, music.beat(BeatFraction.Whole))
-        basic.pause(100)
+        basic.pause(200)
         led.unplot(2, 2)
-        music.stopAllSounds()
-        basic.pause(100)
+        basic.pause(200)
     }
-    basic.showLeds(`
-        # . . . #
-        . # . # .
-        . . # . .
-        . # . # .
-        # . . . #
-        `)
 }
 input.onButtonPressed(Button.B, function () {
     control.reset()

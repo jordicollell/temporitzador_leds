@@ -5,6 +5,9 @@ input.onButtonPressed(Button.A, function () {
             basic.pause(1000)
         }
     }
+    alarma_sonora()
+})
+function alarma_sonora () {
     for (let index = 0; index < 10; index++) {
         led.plot(2, 2)
         music.playTone(262, music.beat(BeatFraction.Whole))
@@ -13,7 +16,7 @@ input.onButtonPressed(Button.A, function () {
         music.stopAllSounds()
         basic.pause(100)
     }
-})
+}
 input.onButtonPressed(Button.B, function () {
     control.reset()
 })

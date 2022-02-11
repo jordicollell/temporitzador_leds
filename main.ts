@@ -16,6 +16,13 @@ function alarma_sonora () {
         music.stopAllSounds()
         basic.pause(100)
     }
+    basic.showLeds(`
+        # . . . #
+        . # . # .
+        . . # . .
+        . # . # .
+        # . . . #
+        `)
 }
 input.onButtonPressed(Button.B, function () {
     control.reset()
